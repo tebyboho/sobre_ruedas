@@ -1,0 +1,32 @@
+
+
+{% if request.user.is_authenticated %}
+
+    <h2>Bienvenido {{request.user}} !!</h2>
+    <form method="POST" action="{% url 'logout' %}">
+        {% csrf_token %}
+        <button type="submit">Salir</button>
+    </form>
+
+    <div>
+        <h3>Lista de Unidades</h3>
+        <h3>Tus unidades publicadas</h3>
+
+        <a href="{% url 'crear-unidad' %}" class="button boton-agregar">Agregar Unidad</a>
+
+    {% for unidad in unidades %}
+
+        <div class="unidades">
+            {{unidad.titulo}}
+            <a href="{% url 'editar-unidad' unidad.id %}" class="button boton-editar ">Editar</a>
+            <a href="{% url 'eliminar-unidad' unidad.id %}" class="button boton-eliminar ">Eliminar</a>            
+        </div>
+
+    
+    {% empty %}
+        <h3>No hay unidades agregadas {{request.user}}</h3>
+    {% endfor %}
+    </div>
+{% else %}
+    <a href="{% url 'login' %}">Ingresar</a>
+{% endif %}

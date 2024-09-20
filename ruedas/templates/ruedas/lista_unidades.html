@@ -1,0 +1,42 @@
+
+{% extends 'ruedas/template.html' %}
+{% load static %}
+
+
+{% block extrahead %}
+    <link rel="stylesheet" href="{% static 'css/normalize.css' %}">
+{% endblock extrahead %}
+
+
+{% block content %}
+
+
+<div class="prox-veh">
+    <p >Descubrí tu próximo vehículo</p>
+</div>
+<div class="container-lista-unidades">
+   <!-- <form method="GET"">
+        <input type="text" name="buscar">
+        <input type="text" value="Buscar">
+        
+        FUTURA BARRA DE BUSQUEDA ?
+    </form> -->
+    <div class="lista-unidades">
+
+        <div class="unidades">
+            {% for unidad in unidades %}
+
+            <div class="unidad">
+                {{unidad.titulo}}
+                <a href="{% url 'unidad-detalle' unidad.id %}" class="button boton-ver">Ver</a>
+            </div>
+
+            {% empty %}
+                <h3>No hay unidades disponibles actualmente..</h3>
+            {% endfor %}
+        </div>
+
+    </div>
+
+</div>
+{% endblock content %}

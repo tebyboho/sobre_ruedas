@@ -1,0 +1,9 @@
+
+<a href="{% url 'panel-admin' %}">Volver</a>
+
+<form method="POST">
+
+    {% csrf_token %}
+    <p>Vas a eliminar esta unidad: "{{unidad}}"</p>
+    <input type="submit" name="" id="" value="Eliminar">
+</form>

@@ -1,0 +1,75 @@
+{% extends 'ruedas/template.html' %}
+{% load static %}
+
+
+{% block extrahead %}
+    <link rel="stylesheet" href="{% static 'css/unidad-detalle.css' %}">
+{% endblock extrahead %}
+
+
+{% block content %}
+<a href="{% url 'unidades' %}" class="button boton-volver">Volver</a>
+
+  <div class="info-imagenes">
+    <div class="info">
+      <p class="name-unidad">{{unidad}}</p> 
+      <p class="version-unidad"><span>Versión:</span> {{unidad.version}}</p>
+
+      <div class="info-unidad">
+        <div class="burbujas">
+          <div class="burbuja">
+            <span>{{unidad.marca}}</span>
+          </div>
+          <div class="burbuja">
+            <span>{{unidad.anio}}</span>
+          </div>
+          <div class="burbuja">
+            <span>{{unidad.kilometros}} Km</span>
+          </div>
+        </div>
+
+        <!--<p><span>Precio:</span> ${{unidad.precio}}</p>
+        <p><span>Reservado:</span> {{unidad.visto|yesno:"Si,No"}}</p> -->
+        {% if unidad.vendido %}
+            <div class="vendido">
+              <p>Vendido</p>
+            </div>
+          {% else %}
+          {% endif %}
+      </div>
+    </div>
+  
+  
+    {% if unidad.imagenes.all %}
+
+    <div class="galeria-container">
+      <button class="prev" onclick="changeImage(-1)">&#10094;</button>
+      <div class="galeria">
+          <img class="main-image" id="main-image" src="{% firstof unidad.imagenes.all.0.imagen.url %}" alt="Imagen principal">
+      </div>
+      <button class="next" onclick="changeImage(1)">&#10095;</button>
+  </div>
+  
+
+  
+    <!-- Array oculto de imágenes con URLs, generado por Django -->
+    <div id="image-urls" style="display: none;">
+      {% for imagen in unidad.imagenes.all %}
+          <span data-url="{{ imagen.imagen.url }}"></span>
+      {% endfor %}
+    </div>
+  
+    {% else %}
+      <div>
+        <p class="no-unidad">No hay imágenes cargadas para esta unidad</p> 
+      </div>
+    {% endif %}
+
+  </div>
+
+{% endblock content%}
+
+{% block extrascripts %}
+    <!-- Aquí enlazas el archivo JavaScript -->
+    <script src="{% static '/js/unidad_detalle.js' %}"></script>
+{% endblock extrascripts %}

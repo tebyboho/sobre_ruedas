@@ -1,0 +1,104 @@
+/*.imagenes-unidad { }
+    /* Si necesitas aplicar estilos al contenedor principal, hazlo aquí */
+    
+
+.button{
+    display: inline-block; /* Para que se comporte como un botón */
+    margin: 2rem 3rem;
+    padding: 10px 20px; /* Espacio interno (arriba-abajo, izquierda-derecha) */
+    background-color: #f0a221; /* Color de fondo */
+    color: white; /* Color del texto */
+    text-decoration: none; /* Quitar el subrayado */
+    border-radius: 5px; /* Bordes redondeados */
+    font-size: 16px; /* Tamaño del texto */
+    text-align: center; /* Centrar el texto */
+    font-family: Roboto;
+    transition: background-color 0.3s ease; /* Animación suave */
+}
+
+.info-imagenes{
+    display: flex;
+    gap: 5rem;
+}
+.info{
+    max-width: 100%;
+    margin-left: 3rem;
+    margin-right: 3rem;
+}
+
+.info .name-unidad{
+    font-size: 3.5rem;
+    font-family: Roboto;
+    font-weight: 700;
+    margin: 5px 0 10px 0;
+}
+.info .version-unidad{
+    font-size: 2rem;
+    font-family: Roboto;
+    font-weight: 400;
+    margin-top: 0;
+}
+
+.info-unidad {
+    margin: 1rem;
+    padding: 1rem;
+}
+
+.info-unidad .burbujas{
+    display: flex;
+    flex-direction: row;
+}
+.info-unidad .burbuja{
+    margin: 4px;
+    border: 1px solid #D1D1D1;
+    border-radius: 40px;
+    padding: 5px;
+}
+
+.info-unidad .burbuja span{
+    font-size: 1.5rem;
+    font-family: Roboto;
+    font-weight: 700;
+}
+
+.galeria-container {
+    position: relative;
+    width: 90rem;
+    margin: auto;
+    border-radius: 12px;
+    box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.4);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    overflow: hidden;
+}
+
+.galeria {
+    display: flex;
+    justify-content: center;
+}
+
+.main-image {
+    flex: 1;
+    max-height: 500px;
+    width: auto;
+}
+
+button.prev, button.next {
+    background-color: transparent;
+    border: none;
+    font-size: 3rem;
+    cursor: pointer;
+    color: #333;
+    z-index: 1;
+}
+
+button.prev {
+    margin-left: 10px;
+}
+
+button.next {
+    margin-right: 10px;
+}
+
+  

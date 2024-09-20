@@ -1,0 +1,46 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plantilla</title>
+    <link rel="preload" href="{% static 'css/normalize.css' %}" as="style">
+    <link rel="stylesheet" href="{% static 'css/normalize.css' %}">
+    <link rel="preload" href="{% static 'css/style.css' %}" as="style">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" crossorigin="crossorigin" as="font">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:wght@400;500;700&display=swap" crossorigin="crossorigin" as="font">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    {% block extrahead %}{% endblock extrahead %}
+</head>
+<body>
+    <header> 
+        <div class="header">
+            <div class="h-header">
+                <h1 class="title-template">
+                    AJ Automotores
+                </h1>
+            </div>
+            <div class="div-nav">
+                <nav class="navegacion-principal" >
+                    <a href={% url 'unidades' %}>Inicio</a>
+                    <a href="#">Sobre Nosotros</a>
+                    <a href="#">Contacto</a>
+                    <a href="{% url 'panel-admin' %}">Login</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+    <div class="container">
+        {% block content %}
+
+        {% endblock content %}
+    </div>
+
+    {% block extrascripts %}
+    {% endblock extrascripts %}
+</body>
+</html>

@@ -1,0 +1,30 @@
+<h1>Formulario de Unidades</h1>
+
+<a href="{% url 'panel-admin' %}" class="button boton-volver">Volver</a>
+
+<form action="" method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{form.as_p}}
+
+    <!-- Mostrar imágenes actuales -->
+    <div>
+        <h3>Imágenes actuales:</h3>
+        {% for imagen in imagenes %}
+            <div>
+                <img src="{{ imagen.imagen.url }}" alt="Imagen de {{ unidad.titulo }}" style="max-width: 200px;">
+                <!-- Opción para eliminar la imagen (tendrás que crear una vista para eliminar) -->
+                <a href="{% url 'eliminar-imagen' imagen.id %}">Eliminar imagen</a>
+            </div>
+        {% empty %}
+            <p>No hay imágenes para esta unidad.</p>
+        {% endfor %}
+    </div>
+
+        <!-- Campo para agregar nuevas imágenes -->
+    <div>
+        <label for="id_nuevas_imagenes">Agregar nuevas imágenes:</label>
+        <input type="file" name="imagenes" accept="image/*" multiple>
+    </div>
+
+    <input type="submit" value="Guardar">
+</form>
