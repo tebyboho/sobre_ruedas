@@ -130,8 +130,13 @@ ALLOWED_FILE_EXTENSIONS = ['.jpg', '.jpeg', '.png']
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
+# Ruta al directorio base del proyecto
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
 STATIC_URL = '/static/'
-STATICFILES_DIRS = [os.path.join(BASE_DIR, 'ruedas/static')]
+
+#Se adaptaria a cualquier OS
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'ruedas','static')]
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 # Default primary key field type
