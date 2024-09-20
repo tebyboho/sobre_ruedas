@@ -23,24 +23,16 @@ Clona este repositorio en tu máquina local:
 ### 2. Crear y activar un entorno virtual (opcional, recomendado)
 
 En macOS/Linux:
-    - Crea el entorno virtual:
-
-    ```
+Crea el entorno virtual:
 
     python3 -m venv env
 
-    ```
-
-    - Activa el entorno virtual:
-
-    ```
+Activa el entorno virtual:
 
     source env/bin/activate
-
-    ```
-
+    
 En Windows:
-    - Crea el entorno virtual:
+Crea el entorno virtual:
 
     ```
 
@@ -48,7 +40,7 @@ En Windows:
 
     ```
 
-    - Activa el entorno virtual:
+Activa el entorno virtual:
 
     ```
 
@@ -58,9 +50,9 @@ En Windows:
 
 Tu estructura de carpetas debería verse así:
 
-- Carpeta Raiz 
-            - env
-            - sobre_ruedas
+├── Carpeta Raiz
+│   ├── env
+│   ├── sobre_ruedas
 
 
 ### 3. Instalar dependencias 
