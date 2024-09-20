@@ -46,8 +46,9 @@ Activa el entorno virtual:
 Tu estructura de carpetas debería verse así:
 
 **Carpeta Raiz**
-_env_
-_sobre_ruedas_
+
+- _env_
+- _sobre_ruedas_
 
 
 ### 3. Instalar dependencias 
