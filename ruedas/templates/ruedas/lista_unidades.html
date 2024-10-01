@@ -21,13 +21,16 @@
         
         FUTURA BARRA DE BUSQUEDA ?
     </form> -->
-    <div class="lista-unidades">
-
+    
         <div class="unidades">
             {% for unidad in unidades %}
 
+            <!--La idea es que el div de unidad sea un enlace..-->
             <div class="unidad">
+                
+                <img class="imagen-unidad" id="main-image" src="{% firstof unidad.imagenes.all.0.imagen.url %}" alt="Imagen principal de {{unidad.titulo}}">
                 {{unidad.titulo}}
+
                 <a href="{% url 'unidad-detalle' unidad.id %}" class="button boton-ver">Ver</a>
             </div>
 
@@ -35,8 +38,6 @@
                 <h3>No hay unidades disponibles actualmente..</h3>
             {% endfor %}
         </div>
-
-    </div>
 
 </div>
 {% endblock content %}
